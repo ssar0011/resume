@@ -1,0 +1,358 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% and Jake Gutierrez's version of it
+% at https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% inspired by https://practicaltypography.com/resumes.html
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin = 1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+%\usepackage[compact]{titlesec}  
+
+%--------------UNDERLINING---------------
+% taken from https://alexwlchan.net/2017/10/latex-underlines/
+
+\usepackage{contour}
+\usepackage{ulem}
+
+\renewcommand{\ULdepth}{3.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+%----------------------------------------
+
+\graphicspath{ {./Images/} }
+
+%----------FONT OPTIONS----------
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+\usepackage{sectsty}
+\sectionfont{\fontsize{15}{0}\selectfont}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+
+% I could have just used the charter package here for the font I wanted...
+% but I'd still need to change compiler to XeLaTeX to include the title font
+% \usepackage{charter}
+
+\setmainfont{XCharter}
+
+%\newfontfamily{\basictitle}{basictitlefont}[
+%Path = Fonts/,
+%Extension = .ttf,
+%UprightFont = basictitlefont
+%]
+% to use:
+% {\basictitle This text uses the basictitle font}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\iffalse
+% \iftrue
+\addtolength{\oddsidemargin}{0.3in}
+\addtolength{\marginparsep}{0.3in}
+\addtolength{\evensidemargin}{0.3in}
+\addtolength{\textwidth}{-0.5in}
+\addtolength{\topmargin}{0.3in}
+\addtolength{\textheight}{0.3in}
+\fi
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    {\color{gray}\titlerule} \vspace{-5pt}
+    \vspace{-3pt}\scshape\raggedright\normalfont
+}{}{0pt}{}
+
+%----------SKILLS LIST SETTINGS----------
+\usepackage{multicol}
+%\item[\vspace{\fill}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+\item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-0.5pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-1pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-9pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{5pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+% ----- TOGGLE PHOTO --------
+% comment out \iffalse and remove the % from \iftrue to toggle photo
+\iffalse
+% \iftrue
+\begin{wrapfigure}{R}{0.15\textwidth}
+\vspace{-35pt}
+\includegraphics[scale=0.20]{dp_cropped}
+\end{wrapfigure}
+\fi
+
+%----------HEADING----------
+
+{ \Huge Sagnick Sarkar}
+\\
+
+% ----- TOGGLE FOR PHOTO ----
+% \vspace{10pt}
+
+\href{mailto:ssar0011@student.monash.edu}{
+    \faEnvelope
+    \thinspace \thinspace
+    \myuline{ssar0011@student.monash.edu}} $|$
+\href{https://www.linkedin.com/in/sagnick-sarkar-614302159}{
+    \faLinkedin
+    \thinspace \thinspace        
+    \myuline{sagnicksarkar}} $|$
+\href{https://github.com/ssar0011/Sagnick}{
+    \faGithub
+    \thinspace \thinspace
+    \myuline{ssar0011}} $|$
+\faPhone
+\thinspace \thinspace
+(+61) 400 993 915
+
+%-----------SUMMARY-----------
+\section*{Professional Summary}
+  Tenacious undergraduate student who demonstrates strong academic results in Mathematical
+Statistics and Computer Science at Monash University, is passionate about assisting others through
+technology and thrives in a fast paced environment as demonstrated from completing numerous
+challenging projects. Also possesses profound communication skills and an innate ability to
+collaborate with diverse teams from managing the mathematics department of North Shore
+Coaching College. Seeking to work as an Intern at Suncorp where a desire for learning new skills,
+and a love for building relationships can contribute towards building a sustainable and responsible
+financial services Group that will help customers, shareholders and communities to prosper.
+      
+
+%-----------EDUCATION-----------
+\section*{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Monash University}{Clayton}
+      {BSc/BCompSci: Mathematical Statistics and Data Science}{EXPECTED IN JUNE 2022} 
+      
+      \resumeItemListStart
+      
+        \resumeItem{IBL Scholarship}
+        \resumeItem{Distiction Average}
+
+      \resumeItemListEnd
+     
+      \resumeSubheading
+       {John Monash Science School}{Clayton}
+       {Victorian Certificate of Education (VCE)}{Jan 2015 - Dec 2017}
+       
+       \resumeItemListStart
+       
+        \resumeItem{ATAR: 90+}
+        
+       \resumeItemListEnd
+      
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section*{Experience}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      {DevOps Intern}{Jan 2021 -- Present}
+      {InfoCentric}{Melbourne, VIC}
+      
+      
+      InfoCentric is the largest privately-owned cloud, data and analytics consulting firms in Australia with a vision to empower organisations to improve and transform their business. 
+      \resumeItemListStart
+        \resumeItem{Extensive work with CI/CD pipelines to push changes on Git repository.}
+        \resumeItem{Engaged actively in learning sessions with various members of the team and organisation and looked for ways to improve.}
+        \resumeItem{Gained experience in deploying Docker containers, on ECS clusters, running Lambda functions and retrieving files from S3 buckets on AWS.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Senior Mathematics Tutor}{Jan 2017 -- Present}
+      {North Shore Coaching College}{Berwick, VIC}
+      
+      
+      Sydney based educational service for students at the age of 3 to 18 years old. With over 65 campuses across Australia, North Shore Coaching College continues to work towards fostering each child's
+potential through a range of educational programs and activities.
+      \resumeItemListStart
+        \resumeItem{Promoted to Senior Tutor as a result of showing customer obsession at work and insisting on the highest standards, thus earning and sustaining the trust of over 50 clients.}
+        \resumeItem{Effectively communicated central concepts in mathematics by applying excellent presentation skills and innovative solutions to traditional teaching methods, thus enabling students to achieve outstanding academic results with over 70\% scholarship admission rates.}
+        \resumeItem{Fostered high performance in others by ensuring that all team members impact was felt within the organisation through taking the initiative to empower them to convey their
+thoughts and perspectives to clients and management inspiring colleagues to embrace leadership qualities in their respective roles and responsibilities.}
+		\resumeItem{Displayed strong values of inclusivity and leadership through offering guidance and establishing shared goals with new employees and working on ways to achieve them together, resulting in a collaborative and inspiring working environment.}
+      \resumeItemListEnd
+      
+      
+      \iffalse
+      % \iftrue
+% -----------Multiple Positions Heading-----------
+    \resumeSubSubheading
+     {Software Engineer I}{Oct 2014 - Sep 2016}
+    \resumeItemListStart
+        \resumeItem{Apache Beam}
+          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+     \resumeItemListEnd
+    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \fi
+      
+      \iffalse
+      % \iftrue
+    \resumeSubheading
+      {Consultant}{Feb 2017}
+      {National Environment Agency}{Singapore}
+      \resumeItemListStart
+        \resumeItem{Reviewed 4 candidate topics for R\&D funding: found current research grants and current environment technology}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Innovation Consultant}{Dec 2016}
+      {Land Transport Authority}{Singapore}
+      \resumeItemListStart
+        \resumeItem{Proposed folding seat solution increases train capacity by 13\%}
+        \resumeItem{Achieved best presentation award (out of 9 pairs of people)}
+      \resumeItemListEnd
+\fi
+
+  \resumeSubHeadingListEnd
+  
+      %-----------PROJECTS-----------
+\section*{Coding Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{https://github.com/ssar0011/CVRP}{\myuline{\textbf{IoT Smart City Capacitated Vehicle Routing Project}}} $|$ \textit{Python}}
+          
+          This was in contribution towards an IoT smart city project conducted by RMIT University in Mornington Peninsula Shire. Developed a routing algorithm for garbage collection through analysis and processing of data by applying acquired understanding in networking.
+          \resumeItemListStart
+            \resumeItem{Employed excellent analytical thinking skills through examining the problem from all angles and challenging processes resulting in effective completion of algorithm.}
+          \resumeItemListEnd
+          
+     \resumeProjectHeading
+     	{{\textbf{Relational Database Application for Non-Profit Organisation}} $|$ \textit{SQL, HTML, CSS, JavaScript}}
+     	
+     	Assisted a Senior Developer in creating an application to track and manage enrolment information for courses offered by the organisation.
+     	\resumeItemListStart
+     		\resumeItem{Employed excellent analytical thinking skills through examining the problem from all angles and challenging processes resulting in effective completion of algorithm.}
+     		\resumeItemListEnd
+    \resumeSubHeadingListEnd
+   
+
+
+%-----------CCAs-----------
+\section*{Extracurriculars}
+    \resumeSubHeadingListStart
+    
+      \resumeSubheading
+      {Volunteer}{Jan 2018 -- present}
+      {Brahma Kumaris Spiritual University}{}
+      
+      Brahma Kumaris is a worldwide spiritual movement dedicated towards personal transformation with a commitment with regard to enabling individuals to incorporate gratitude, self-love and peace into their daily lives and routine.
+      \resumeItemListStart
+        \resumeItem{Regularly attended weekly spiritual sessions, learning about effective ways of integrating empathy, gratitude and service in order to earn trust and respect from others.}
+		\resumeItem{Assisted in the setup of weekend retreats and cultural events, fostering valuable communal relationships with hundreds of people and gained incredible insights into various cultures and the importance of diversity.}
+		\resumeItem{Played a significant role in shaping an inclusive culture through self-reflection and addressing the unconscious biases that may arise within normal interactions and conversations.}
+        
+      \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section*{Skills}
+\begin{multicols}{2}
+\begin{itemize}
+    \item Back-End (Python, Rails, MVC, Docker)
+    \item Data Analysis (R, Pandas, MatPlotLib, NumPy)
+    \item Front-End (React, HTML, CSS, JavaScript
+    \item Testing (Jest, Enzyme, rspec)
+    \item AWS (S3, ECS, EC2, Lambda, OpsWorks)
+    \item CI/CD Pipelines (GitLab)
+    \item Databases (SQL)
+    \item Data Visualisation (Tableau, Vega-Lite)
+\end{itemize}
+\end{multicols}
+
+   
+\section*{Referees}
+Provided upon request
+
+
+%
+\iffalse
+% \iftrue
+%-----------PROGRAMMING SKILLS-----------
+\section*{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C/C++, SQL, JavaScript, HTML/CSS, R} \\
+     \textbf{Frameworks}{: WordPress} \\
+     \textbf{Developer Tools}{: Jupyter Notebooks, Git, Google Cloud Platform, VS Code, Amazon AWS} \\
+     \textbf{Libraries}{: pandas, plotly}
+    }}
+ \end{itemize}
+\fi
+
+%-------------------------------------------
+\end{document}
